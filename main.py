@@ -43,8 +43,6 @@ def main() :
         with st.spinner() :
             result = db.similarity_search_with_score(prompt, score_threshold=0.4)
     if result :
-        print(len(result))
-        st.write(result)
         if len(result) > 0 : show_product(result)
     else : st.markdown('**No Relevant Results!**')  
 
