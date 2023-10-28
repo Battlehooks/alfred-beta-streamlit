@@ -20,6 +20,7 @@ youtube_ikea_data = pd.read_csv('./youtube_url_ikea.tsv', delimiter = '\t')
 
 huggingface_key = st.secrets['HUGGINGFACE_KEY']
 openai_key = st.secrets['OPENAI_API_KEY']
+os.environ['OPENAI_API_KEY'] = openai_key
 
 fs = LocalFileStore('cache_embed')
 raw_embeddings = OpenAIEmbeddings()
@@ -66,7 +67,7 @@ def show_product(result) :
         st.subheader('Result Similiar')
     for result0 in result[1:] :
         res = result0[0]
-        response = requests.get(result[0][0].metadata['imgUrl'])
+        response = requests.get(res.metadata['imgUrl'])
         img_thumb = Image.open(BytesIO(response.content))
         s1, s2, s3 = st.columns(3)
         with s1 :
