@@ -5,3 +5,7 @@ bitsandbytes
 tiktoken
 accelerate
 pillow
+openai
+faiss-cpu
+mysql-connector
+datetime
