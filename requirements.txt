@@ -4,6 +4,4 @@ langchain[llm]
 bitsandbytes
 tiktoken
 accelerate
-json
-requests
 pillow
