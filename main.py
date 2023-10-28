@@ -44,7 +44,7 @@ def main() :
             result = db.similarity_search_with_score(prompt, score_threshold=0.4)
     if result :
         if len(result) > 0 : show_product(result)
-    else : st.markdown('**No Relevant Results!**')  
+        else : st.markdown('**No Relevant Results!**')
 
 def show_product(result) :
     st.subheader('Best result') 
